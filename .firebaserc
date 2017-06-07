@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "chat-3c32b",
+    "staging": "chat-3c32b"
+  }
+}

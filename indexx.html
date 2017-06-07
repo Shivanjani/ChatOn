@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+   
+   <head>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+ <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+   </head>
+   
+   <body ng-app = "myapp">
+      
+      <div ng-controller = "HelloController" >
+<div ng include = "indexx.html"></div>
+         <h2>hello {{helloTo.title}}</h2>
+           <form ng-submit="submit()" ng-controller="ExampleController">
+         <p>Enter score: <input type = "text" ng-model = "name"></p>
+ <input type="submit" id="submit" value="Submit" />
+</form>
+      </div>
+      <script>
+
+
+
+
+         angular.module("myapp", [])
+         
+         .controller("HelloController", function($scope) {
+            $scope.helloTo = {};
+            $scope.helloTo.title = "shivanjani";
+         });
+      </script>
+      
+   </body>
+</html>
+

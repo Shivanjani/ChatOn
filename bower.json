@@ -1,0 +1,24 @@
+{
+  "name": "tennis",
+  "description": "game",
+  "main": "app.js",
+  "keywords": [
+    "renjith"
+  ],
+  "authors": [
+    "shivanjani"
+  ],
+  "license": "123",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}
