@@ -1,7 +1,9 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
+
     <div id="navbar" class="collapse navbar-collapse">
+    <a href="http://fontmeme.com/calligraphy-fonts/"><img src="http://fontmeme.com/permalink/170608/95be81edb5f1ad7bc984f02bdec48b9a.png" alt="calligraphy-fonts" border="0"></a>
       <ul class="nav navbar-nav pull-right">
         <li><a href="javascript:;">{{user.displayName || user.email}}</a></li>
         <li><a href="javascript:;" ng-click="logout()">Logout</a></li>
@@ -11,15 +13,23 @@
 </nav>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-offset-2 col-lg-8">
+		<div class="col-lg-8">
 	  	  <h2>Chats</h2>
-		  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-block" style="margin-bottom: 20px">Create Group</button>
-		  <a href="" class="btn   send-message-btn" data-toggle="modal" data-target="#userModel" role="button"><i class="fa fa-plus"></i>Users</a>
 		  <ul class="list-group">
-		  <a class="btn" ng-click="remove()">Delete</a>
+      <a href="" class="btn   send-message-btn" data-toggle="modal" data-target="#userModel" role="button"><i class="fa fa-plus"></i>Users</a>
 		    <li  class="list-group-item"  style="cursor: pointer;" ng-repeat="(key, name) in channels" ng-click="onClickChannel(key)">{{name}}</li>
 		  </ul>
 		</div>
+    <div class="col-lg-3">
+        <div style="margin-top: 30px">
+          <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-block" style="margin-bottom: 20px">Create Group</button>
+
+          <span style="font-weight: 200;">Online Users</span>
+            <div ng-repeat="(id,name) in onlineUsers">
+              <spa style="cursor: pointer;color:blue;" ng-click="createOneToOneChat(id, name)">{{name}} <span ng-show="user.uid == id"> (You) </span></span>
+            </div>
+        </div>
+    </div>
 	</div>
 </div>
 <!-- Modal -->
@@ -45,29 +55,25 @@
       
     </div>
   </div>
-
+  <div class="modal fade" id="userModel" role="dialog">
+   <div class="modal-dialog">
+   
     
-      <!-- Model -->
-
-<div class="modal fade" id="userModel" role="dialog">
-    <div class="modal-dialog">
-    
-     
-      <div class="modal-content">
-        <div class="modal-headesdr">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add User</h4>
-        </div>
-        <div class="modal-body">
-            <div ng-repeat="u in users" ng-hide="u.uid == user.uid">
-              <spa style="cursor: pointer;color:blue;" ng-click="createOneToOneChat(u)">{{u.name}} - {{u.email}}</span>
-            </div>
-          
+     <div class="modal-content">
+       <div class="modal-headesdr">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Add User</h4>
        </div>
+       <div class="modal-body">
+           <div ng-repeat="u in users" ng-hide="u.uid == user.uid">
+             <spa style="cursor: pointer;color:blue;" ng-click="createOneToOneChat(u)">{{u.name}} - {{u.email}}</span>
+           </div>
+         
       </div>
-      
-    </div>
-  </div>
+     </div>
+     
+   </div>
+ </div>
 
 
    
