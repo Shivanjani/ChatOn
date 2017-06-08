@@ -2,6 +2,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div id="navbar" class="collapse navbar-collapse">
+    <a href="http://fontmeme.com/calligraphy-fonts/"><img src="http://fontmeme.com/permalink/170608/95be81edb5f1ad7bc984f02bdec48b9a.png" alt="calligraphy-fonts" border="0"></a>
       <ul class="nav navbar-nav pull-right">
         <li><a href="javascript:;">{{user.displayName || user.email}}</a></li>
         <li><a href="javascript:;" ng-click="logout()">Logout</a></li>
@@ -9,6 +10,14 @@
     </div>
   </div>
 </nav>
+
+
+<a ng-href="#" back-button class="link-back">
+
+<span class="icon icon-arrow-left"><img src ="img/prev.jpg" height="50"></span>
+</a>
+
+
 <div class="container">
     <div class="row" style="margin-top: 20px" ng-hide="channel.directChat">
         <div class="btn-panel btn-panel-conversation">
@@ -46,6 +55,7 @@
     </div>
 
 </div>
+
 
 <!-- Modal -->
   <div class="modal fade" id="myModel" role="dialog">
